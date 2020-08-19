@@ -1,0 +1,167 @@
+@mixin pad_more {
+    @media(max-width: 880px){
+        @content;
+    }
+}
+@mixin pad {
+    @media(max-width: 768px){
+        @content;
+    }
+}
+@mixin mobile {
+    @media(max-width: 375px){
+        @content;
+    }
+}
+
+.banner{
+    margin-bottom: 60px;
+    @include pad(){
+        margin-bottom: 0px;
+    }
+}
+/*main*/
+.main{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include pad(){
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.category{
+    width: 32%;
+    font-size: $fz-l;
+    text-align: center;
+    @include pad(){
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    h2{
+        background: $green;
+        color: $white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    li{
+        border: 1px solid $l-gray;
+        a{
+            display: block;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            color: $green;
+        }
+        a:hover{
+            background: $l-gray;
+        }
+    }
+    .click{
+        background: $l-gray;
+    }
+}
+.product{
+    width: 66%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    @include pad(){
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .featured{
+        position: absolute;
+        top: 0;
+        left: 20px;
+        p{
+            writing-mode: vertical-rl;
+            padding: 10px;
+            font-size: $fz-s;
+            line-height: 20px;
+            background: $green;
+            color: $white;
+        }
+    }
+    .favorite{
+        position: absolute;
+        top: 19px;
+        right: 22px;
+        a{
+            background: none;
+            padding: 0px;
+        }
+        a:hover{
+            background: none;
+        }
+    }
+    li{
+        margin-bottom: 20px;
+        position: relative;
+        h3{
+            font-size: $fz-m;
+            padding-left: 33px;
+            padding-right: 33px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+        span{
+            font-size: $fz-m;
+            padding-left: 25px;
+            padding-right: 20px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            border-left: 1px solid $l-gray;
+        }
+        a{
+            display: block;
+            font-size: $fz-l;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            background: $l-gray;
+            color: $green;
+        }
+        a:hover{
+            background: $green;
+            color: $l-gray;
+        }
+    }
+}
+.NamePrice{
+    display: flex;
+    justify-content: space-between;
+    border-right: 1px solid $l-gray;
+    border-left: 1px solid $l-gray;
+}
+/*page*/
+.page{
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    @include pad(){
+        justify-content: center;
+    }
+    a{
+        display: block;
+        width: 60px;
+        padding: 19px 0;
+        border: 1px solid $l-gray;
+        color: $green;
+        font-size: $fz-m;
+    }
+    a:hover{
+        background: $l-gray;
+    }
+    .click{
+        background: $green;
+        color: $white;
+    }
+    img{
+        width: 18px;
+    }
+}

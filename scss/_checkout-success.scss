@@ -1,0 +1,117 @@
+@mixin pad_more {
+    @media(max-width: 880px){
+        @content;
+    }
+}
+@mixin pad {
+    @media(max-width: 768px){
+        @content;
+    }
+}
+@mixin mobile_more {
+    @media(max-width: 600px){
+        @content;
+    }
+}
+@mixin iphone_plus {
+    @media(max-width: 414px){
+        @content;
+    }
+}
+@mixin mobile {
+    @media(max-width: 375px){
+        @content;
+    }
+}
+
+.main{
+    margin-bottom: 60px;
+    position: relative;
+    @include pad(){
+        margin-bottom: 0px;
+    }
+    .background{
+        img{
+        width: 100%;
+        }
+    }
+    .check{
+        position: absolute;
+        top: 33%;
+        left: 40%;
+        display: flex;
+        @include pad(){
+            top: 33%;
+            left: 37%;
+        }
+        @include mobile_more(){
+            top: 33%;
+            left: 31%;
+        }
+        @include iphone_plus(){
+            top: 33%;
+            left: 27%;
+        }
+        @include mobile(){
+            top: 33%;
+            left: 25%;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        .border{
+            width: 66px;
+            height: 10px;
+            border-bottom: 1px solid $green;
+        }
+    }
+    .status{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        @include pad(){
+            top: 45%;
+            left: 37%;
+        }
+        @include mobile_more(){
+            top: 45%;
+            left: 31%;
+        }
+        @include iphone_plus(){
+            top: 45%;
+            left: 27%;
+        }
+        @include mobile(){
+            top: 45%;
+            left: 25%;
+        }
+    }
+    .keep_shopping{
+        position: absolute;
+        top: 60%;
+        left: 34%;
+        @include pad(){
+            width: 100%;
+            top: 100%;
+            left: 0;
+        }
+        a{
+            text-align: center;
+            width: 300px;
+            display: block;
+            padding: 17px 0px;
+            background: $l-orange;
+            color: $green;
+            font-size: $fz-l;
+            font-family: $fw-normal;
+            @include pad(){
+                width: 100%;
+            }
+        }
+    }
+    a:hover{
+        background: $green;
+        color: $l-orange;
+    }
+}
